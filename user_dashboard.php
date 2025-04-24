@@ -58,6 +58,18 @@ if ($pending_pengajuan) {
     $pengajuan_data = $stmt->fetchAll();
     $source = "riwayat pengajuan";
 }
+
+// Ambil detail user lengkap termasuk nama, jurusan, prodi
+$stmt_user = $pdo->prepare("
+    SELECT u.nama, ps.nama AS nama_prodi, j.nama AS nama_jurusan
+    FROM users u
+    LEFT JOIN program_studi ps ON u.program_studi_id = ps.id
+    LEFT JOIN jurusan j ON ps.jurusan_id = j.id
+    WHERE u.id = :user_id
+");
+$stmt_user->execute(['user_id' => $user_id]);
+$user_detail = $stmt_user->fetch();
+
 ?>
 
 <!DOCTYPE html>
@@ -136,12 +148,24 @@ if ($pending_pengajuan) {
         .username {
             font-weight: bold;
         }
+        .user-info {
+            font-size: 17px;
+            color: #555;
+            margin-top: 4px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <a href="?logout" class="logout-btn">Logout</a>
         <h1>Dashboard Mahasiswa <span class="username">(<?= htmlspecialchars($username); ?>)</span></h1>
+        <p class="user-info">
+            Nama : <?= htmlspecialchars($user_detail['nama']); ?><br>
+            Jurusan : <?= htmlspecialchars($user_detail['nama_jurusan']); ?><br>
+            Program Studi : <?= htmlspecialchars($user_detail['nama_prodi']); ?>
+        </p>
 
         <!-- Form Pengajuan -->
         <div class="section">

@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrasi Dosen dan Pegawai</title>
+    <title>Registrasi Admin dan Pegawai</title>
     <style>
         * {
             box-sizing: border-box;
@@ -155,7 +155,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
     <div class="register-container">
-        <h2>Registrasi Dosen atau Pegawai</h2>
+        <h2>Registrasi Admin atau Pegawai</h2>
 
         <?php if (isset($_GET['status']) && $_GET['status'] === 'success'): ?>
             <p class="success-message">Pendaftaran berhasil! Silakan login.</p>
@@ -192,7 +192,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </p>
 
         <p style="text-align: center; margin-top: 10px;">
-            Bukan pegawai/dosen? Daftar <a href="register.php">mahasiswa disini</a>
+            Bukan pegawai/admin? Daftar <a href="register.php">mahasiswa disini</a>
         </p>
     </div>
 </body>
