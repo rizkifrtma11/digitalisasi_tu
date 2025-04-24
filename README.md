@@ -1,4 +1,4 @@
-# digitalisasi_tu
+# Digitalisasi TU
 Sistem ini merupakan sistem Digitalisasi TU <br><br>
 
 Cara Kerja :<br>
