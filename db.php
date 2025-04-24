@@ -1,8 +1,8 @@
 <?php
-$host = 'sql312.byethost22.com';
-$db = 'b22_38778699_database_digitalisasi';
-$user = 'b22_38778699';  // Ganti dengan username database Anda
-$pass = 'digitalisasi12345';  // Ganti dengan password database Anda
+$host = '';
+$db = '';
+$user = '';  // Ganti dengan username database Anda
+$pass = '';  // Ganti dengan password database Anda
 
 // Koneksi ke database MySQL
 try {
