@@ -1,5 +1,5 @@
 # Digitalisasi TU
-Sistem ini merupakan sistem Digitalisasi TU <br><br>
+Sistem ini merupakan web aplikasi sistem Digitalisasi TU <br><br>
 
 Cara Kerja :<br>
 <ol>
